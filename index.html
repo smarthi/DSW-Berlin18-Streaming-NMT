@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Embracing Diversity: Searching over multiple languages</title>
+		<title>Building streaming pipelines for neural machine translation</title>
 
-    <meta name="description" content="Embracing Diversity: Searching over multiple languages">
-    <meta name="author" content="Jeff Zemerick; Suneel Marthi">
+    <meta name="description" content="Building streaming pipelines for neural machine translation">
+    <meta name="author" content="Kellen Sunderland; Suneel Marthi">
 
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
@@ -38,7 +38,7 @@
           <br/>
           <br/>
           <br/>
-          <h3>Building shit with MxNet</h3>
+          <h3>Building streaming pipelines for neural machine translation</h3>
           <br/>
           <p>Suneel Marthi<br/>
              Kellen Sunderland
@@ -48,13 +48,11 @@
         </section>
 				<section data-background-image="img/ZsMwlm2.jpg">
           <h3>$WhoAreWe</h3>
-          <h6 style='text-align: left; font-size: 80%;'>Kellen Sunderland <br/><span style="font-size: 60%"><i class="fa fa-twitter" aria-hidden="true"></i> @mtnfog</span></h6>
+          <h6 style='text-align: left; font-size: 80%;'>Kellen Sunderland <br/><span style="font-size: 60%"><i class="fa fa-twitter" aria-hidden="true"></i> @KellenDB</span></h6>
           <ul style='font-size: 70%;'>
-            <li>Software and AWS Cloud Engineer</li>
-            <li>Contributor to Apache NiFI<br/></li>
-            <li>Committer and PMC on Apache OpenNLP</li>
+            <li>Member of Apache Software Foundation</li>
+            <li>Contributor to Apache MXNet (incubating), and committer on Apache Joshua (incubating)</li>
           </ul>
-          <br/>
           <br/>
           <h6 style='text-align: left; font-size: 80%;'>Suneel Marthi <br/><span style="font-size: 60%"><i class="fa fa-twitter" aria-hidden="true"></i> @suneelmarthi</span></h6>
           <ul style='font-size: 70%;'>
@@ -74,41 +72,129 @@
           </ul>
         </section>
         <section data-background-image="img/ZsMwlm2-blueish.jpg">
-          <h3>What is Multi-Lingual Search ?</h3>
-        </section>
-        <section data-background-image="img/ZsMwlm2-blueish.jpg">
+          <h3>Translation Tools</h3>
           <ul>
-            <li>Searching</li>
-            <ul>
-              <li>over content written in different languages</li>
-              <li>with users speaking different languages</li>
-              <li>both</li>
-            </ul>
-            <li>Parallel corpora</li>
-            <li>Translating queries</li>
-            <li>Translating documents</li>
+            <li>Apache Joshua (incubating) - A statistical machine translation decoder for phrase-based, hierarchical, and syntax-based machine translation, written in Java.</li>
+            <li>Apache MXNet (incubating) - A flexible and efficient library for deep learning.</li>
+            <li>Sockeye - A sequence-to-sequence framework for Neural Machine Translation based on Apache MXNet Incubating.</li>
           </ul>
         </section>
         <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>Why Multi-Lingual Search ?</h3>
+          <h3>Why move from SMT to NMT?</h3>
+          <ul>
+            <li>Research results were too good to ignore.</li>
+            <li>The fluency of translations was a huge step forward compared to statistical systems.</li>
+            <li>We knew that there would be exciting future work to be done in this area.</li>
+          </ul>
         </section>
         <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>Embracing diversity</h3>
+          <h3>Why move from SMT to NMT?</h3>
+          <img src='img/wmt.png' style='max-width: 50%; max-height: 50%; border: none; background: none;box-shadow: none; '/>
+          <p style='font-size: 50%;'>The University of Edinburgh’s Neural MT Systems for WMT17 – Rico Sennrich, Alexandra Birch, Anna Currey, Ulrich Germann, Barry Haddow, Kenneth Heafield, Antonio Valerio Miceli Barone and Philip Williams.</p>
+        </section>
+        <section data-background-image="img/ZsMwlm2-yellowish.jpg">
+          <h3>SMT versus NMT at Scale</h3>
+          <div style='font-size: 85%;'>
+            <table>
+              <tr>
+                <th>Joshua</th>
+                <th>Sockeye</th>
+              </tr>
+              <tr>
+                <td>Reasonable Quality Translation</td>
+                <td>High Quality Translations</td>
+              </tr>
+              <tr>
+                <td>Java / C++</td>
+                <td>Python 3 / C++</td>
+              </tr>
+              <tr>
+                <td>Model size 60GB-120GB</td>
+                <td>Model size 256 MB</td>
+              </tr>
+              <tr>
+                <td>Complicated Training Process</td>
+                <td>Simple Training Process</td>
+              </tr>
+              <tr>
+                <td>Relatively complex implementation</td>
+                <td>400 lines of code</td>
+              </tr>
+              <tr>
+                <td>Low translation costs</td>
+                <td>High translation costs</td>
+              </tr>
+              <tr>
+            </table>
+          </div>
+        </section>
+        <section data-background-image="img/ZsMwlm2-yellowish.jpg">
+          <h3>SMT versus NMT at Scale</h3>
+          <div style='font-size: 85%;'>
+            <table>
+              <tr>
+                <th>Joshua</th>
+                <th>Sockeye</th>
+              </tr>
+              <tr>
+                <td>Reasonable Quality Translation</td>
+                <td><span style="color: lightgreen">High Quality Translations<span></td>
+              </tr>
+              <tr>
+                <td>Java / C++</td>
+                <td>Python 3 / C++</td>
+              </tr>
+              <tr>
+                <td>Model size 60GB-120GB</td>
+                <td><span style="color: lightgreen">Model size 256 MB</span></td>
+              </tr>
+              <tr>
+                <td>Complicated Training Process</td>
+                <td><span style="color: lightgreen">Simple Training Process</span></td>
+              </tr>
+              <tr>
+                <td>Relatively complex implementation</td>
+                <td><span style="color: lightgreen">400 lines of code</span></td>
+              </tr>
+              <tr>
+                <td><span style="color: lightgreen">Low translation costs</span></td>
+                <td>High translation costs</td>
+              </tr>
+              <tr>
+            </table>
+          </div>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+          <h3>NMT Challenges – Input*</h3>
+          <p>The input into all neural network models is always a tensor (i.e. a multi-dimensional vector).
+            How do you represent a word in a vector?</p>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+          <h3>NMT Challenges – Rare Words*</h3>
+          <p>The input into all neural network models is always a tensor (i.e. a multi-dimensional vector).
+            How do you represent a word in a vector?</p>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+          <h3>NMT Challenges – Cost*</h3>
           <ul>
-            <li>Most online tech content is in English</li>
-            <ul>
-              <li>Wikipedia dumps:</li>
-              <ul>
-                <li>en: 62GB</li>
-                <li>de: 17GB</li>
-                <li>it:&nbsp;&nbsp;&nbsp;10GB</li>
-              </ul>
-            </ul>
-            <li>Good number of non-English speaking users</li>
-            <li>A lot of search queries are composed in English</li>
-            <li>Preferable to retrieve search results in native language</li>
-            <li>&hellip; or even to consolidate all results in one language</li>
+            <li>Step 1: Create great profiling tools.</li>
+            <li>Step 2: Get specialists to optimize bottlenecks.</li>
+            <li>Step 3: ???</li>
+            <li>Step 4: Profit.</li>
           </ul>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+          <h3>MXNet Profiling Tools</h3>
+          <table>
+            <tr>
+              <th>CPU Profiler (vtune)</th>
+              <th>GPU Profiler (nvprof)</th>
+            </tr>
+          </table>
+          <table>
+            <td><img src='img/vtune_2.png' style='width: 400px; border: none; background: none;box-shadow: none; '/></td>
+            <td><img src='img/lstm.png' style='width: 400px; border: none; background: none;box-shadow: none; '/></td>
+          </table>
         </section>
         <section data-background-image="img/ZsMwlm2-redish.jpg">
           <h3>UC1 &mdash; tech domain, native first</h3>
