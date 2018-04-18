@@ -71,13 +71,33 @@
             <li>Demo</li>
           </ul>
         </section>
-        <section data-background-image="img/ZsMwlm2-blueish.jpg">
+        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
           <h3>OSS Tools</h3>
+          <ul>
+            <li>Apache Flink - A distributed stream processing engine written in Java and Scala.</li>
+            <li>Apache OpenNLP - A machine learning toolkit for Natural Language Processing, written in Java.</li>
+            <li>Apache Thrift - A framework for cross-language services development.</li>
+          </ul>
+        </section>
+        <section data-background-image="img/ZsMwlm2-blueish.jpg">
+          <h3>OSS Tools (contd)</h3>
           <ul>
             <li>Apache Joshua (incubating) - A statistical machine translation decoder for phrase-based, hierarchical, and syntax-based machine translation, written in Java.</li>
             <li>Apache MXNet (incubating) - A flexible and efficient library for deep learning.</li>
             <li>Sockeye - A sequence-to-sequence framework for Neural Machine Translation based on Apache MXNet Incubating.</li>
           </ul>
+        </section>
+        <section data-background-image="img/ZsMwlm2-greenish.jpg">
+           <h3>Statistical Machine Translation</h3>
+            <p style='text-align: left'>Generate Translations from Statistical Models trained on Bilingual Corpora.</p>
+            <p style='text-align: left'>Translation happens per a probability distribution <code>p(e/f)</code></p>
+            <pre><code data-trim data-noescape>E = string in the target language (English)
+
+F = string in the source language (Spanish)
+
+e~ = argmax  p(e/f) = argmax p(f/e) * p(e)
+
+e~ = best translation, the one with highest probability</code></pre>
         </section>
         <section data-background-image="img/ZsMwlm2-redish.jpg">
           <h3>Why move from SMT to NMT?</h3>
