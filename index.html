@@ -93,12 +93,12 @@
         <section data-background-image="img/ZsMwlm2-greenish.jpg">
            <h3>Statistical Machine Translation</h3>
             <p style='text-align: left'>Generate Translations from Statistical Models trained on Bilingual Corpora.</p>
-            <p style='text-align: left'>Translation happens per a probability distribution <code>p(e\f)</code></p>
+            <p style='text-align: left'>Translation happens per a probability distribution <code>p(e|f)</code></p>
             <pre><code data-trim data-noescape>E = string in the target language (English)
 
 F = string in the source language (Spanish)
 
-e~ = argmax  p(e\f) = argmax p(f\e) * p(e)
+e~ = argmax  p(e|f) = argmax p(f|e) * p(e)
 
 e~ = best translation, the one with highest probability</code></pre>
         </section>
