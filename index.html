@@ -270,21 +270,17 @@ e~ = best translation, the one with highest probability</code></pre>
           <img src='img/batch.png' style='max-width: 80%; border: none; background: none;box-shadow: none; '/>
         </section>
         <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>NMT Challenges – Cost*</h3>
+          <h3>NMT Challenges – Cost</h3>
           <ul>
             <li>Step 1: Create great profiling tools, measurement.</li>
             <li>Step 2: Get specialists to optimize bottlenecks. </li>
             <li>Step 3: ???</li>
             <li>Step 4: Profit.</li>
-          </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>Sockeye Model Types</h3>
-          <ul>
-              <li>RNN Models</li>
-              <li>Convolutional Models</li>
-              <li>Transformer Models</li>
-          </ul>
+          </ul><br/><br/>
+          
+          <span style='font-size: 50%;'>New layer norm, top-k, batch-mul, transpose, smoothing op.  3.5x speedup so far.  Working in branches:</span><br/>
+          <span style='font-size: 50%;'>https://github.com/MXNetEdge/sockeye/tree/dev_speed</span><br/>
+          <span style='font-size: 50%;'>https://github.com/MXNetEdge/incubator-mxnet/tree/dev_speed</span><br/>
         </section>
         <section data-background-image="img/ZsMwlm2-redish.jpg">
           <h3>Apache MXNet Profiling Tools</h3>
@@ -299,6 +295,25 @@ e~ = best translation, the one with highest probability</code></pre>
             <td><img src='img/lstm.png' style='width: 400px; border: none; background: none;box-shadow: none; '/></td>
           </table>
         </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+          <h3>TVM</h3>
+            <p style='font-size: 75%;'>TVM is a Tensor intermediate representation(IR) stack for deep learning systems. It is designed to close the gap between the productivity-focused deep learning frameworks, and the performance- and efficiency-focused hardware backends. TVM works with deep learning frameworks to provide end to end compilation to different backends. </p>
+            <p style='font-size: 50%;'>https://github.com/dmlc/tvm</p>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+          <h3>Alibaba TVM Optimization</h3>
+            <img src='img/transformer.png' style='width: 300px; border: none; background: none;box-shadow: none; '/>
+            <p style='font-size: 50%;'>http://tvmlang.org/2018/03/23/nmt-transformer-optimize.html</p>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+          <h3>Alibaba TVM Optimization</h3>
+            <img src='img/tvm_speedup.png' style='width: 400px; border: none; background: none;box-shadow: none; '/>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+          <h3>Facebook - Tensor Comprehensions</h3><br/>
+          <img src='img/tc_evol_slower.gif' style='width: 400px; border: none; background: none;box-shadow: none; '/><br/>
+          <p style='font-size: 50%;'>https://research.fb.com/announcing-tensor-comprehensions/</p>
+        </section>
         <section data-background-image="img/ZsMwlm2-greenish.jpg">
             <h3>NMT Inference Processing</h3>
             <img src='img/NMT_tasks.png' style='max-width: 80%; border: none; background: none;box-shadow: none; '/>
@@ -310,10 +325,34 @@ e~ = best translation, the one with highest probability</code></pre>
         <section data-background-image="img/buzzwords_2017-blueish.png">
           <h3>Credits</h3>
           <br/>
-          <img src="img/OpenNLP-Team.png", style="..." width="80%"/>
+          <img src="img/OpenNLP-Team.png", width="80%"/>
+        </section>
+        <section data-background-image="img/buzzwords_2017-blueish.png">
+          <h3>Credits cont.</h3>
+          <ul>
+            <li>Apache MXNet: Core Dev Team, Asmus Hetzel (Amazon), Marek Kolodziej (NVIDIA), Dick Carter (NVIDIA), Tianqi Chen (U of W), MKL-DNN Team (Intel)</li>
+            <li>Sockeye: Felix Hieber (Amazon), Tobias Domhan (Amazon), David Vilar (Amazon), Matt Post (Amazon)</li>
+            <li>Apache Joshua: Matt Post (Johns Hopkins), Tommaso Teofili, NASA JPL</li>
+            <li>University of Edinburgh, Google, Facebook, NYU, Stanford</li>
+          </ul>
+        </section>
+        <section data-background-image="img/ZsMwlm2.jpg">
+          <h2>Links</h2>
+          <ul>
+            <li>Attention is All You Need Annotated: http://nlp.seas.harvard.edu/2018/04/03/attention.html</li>
+            <li>Sockeye training tutorial: https://github.com/awslabs/sockeye/tree/master/tutorials/wmt</li>
+          </ul>
         </section>
         <section data-background-image="img/ZsMwlm2.jpg">
           <h2>Questions ???</h2>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+          <h3>Sockeye Model Types</h3>
+          <ul>
+              <li>RNN Models</li>
+              <li>Convolutional Models</li>
+              <li>Transformer Models</li>
+          </ul>
         </section>
 			</div>
 		</div>
