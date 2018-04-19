@@ -99,6 +99,136 @@ e~ = argmax  p(e/f) = argmax p(f/e) * p(e)
 
 e~ = best translation, the one with highest probability</code></pre>
         </section>
+        <section data-background-image="img/ZsMwlm2-greenish.jpg">
+            <h3>Word-based Translation</h3>
+        </section>
+        <section data-background-image="img/ZsMwlm2-greenish.jpg">
+            <dl>
+                <dt>How to translate a word &rarr; lookup in dictionary</dt>
+                <dd>Ge­b&auml;u­de — building, house, tower.</dd>
+                <br/>
+                <dt>Multiple translations</dt>
+                <dd>some more frequent than others<br/>
+                    for instance: house and building most common</dd>
+            </dl>
+        </section>
+        <section data-background-image="img/ZsMwlm2-greenish.jpg">
+            <p>Look at a parallel corpus<br/>(German text along with English translation)</p>
+            <table>
+                <thead>
+                <tr>
+                    <th>Translation of Ge­b&auml;u­de</th><th>Count</th><th>Probability</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>house</td><td>5.28 billion</td><td>0.51</td>
+                </tr>
+                <tr>
+                    <td>building</td><td>4.16 billion</td><td>0.402</td>
+                </tr>
+                <tr>
+                    <td>tower</td><td>9.28 million</td><td>0.09</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-background-image="img/ZsMwlm2-yellowish.jpg">
+            <h3>Alignment</h3>
+            <ul>
+                <li>In a parallel text (or when we translate), we align words in one language with the word in the other<br/>
+                    <table>
+                        <tr>
+                            <td>Das</td><td>Geb&auml;ude</td><td>ist</td><td>hoch</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td>
+                        </tr>
+                        <tr>
+                            <td>the</td><td>building</td><td>is</td><td>high</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>Word positions are numbered 1&mdash;4</li>
+            </ul>
+        </section>
+        <section data-background-image="img/ZsMwlm2-yellowish.jpg">
+            <h3>Alignment Function</h3>
+            <ul>
+                <li>Define the Alignment with an Alignment Function</li>
+                <li>Mapping an English target word at position <code>i</code> to <code>a</code> German source word at position <code>j</code> with a function <code>a : i &rarr; j</code></li>
+                <li>Example</li>
+            </ul>
+            <pre><code data-trim data-noescape>a : {1 &rarr; 1, 2 &rarr; 2, 3 &rarr; 3, 4 &rarr; 4}</code></pre>
+        </section>
+        <section data-background-image="img/ZsMwlm2-blueish.jpg">
+            <h3>One-to-Many Translation</h3>
+            <p>A source word could translate into multiple target words</p>
+            <table>
+                <tr>
+                    <td>Das</td><td>ist</td><td>ein</td><td colspan='3' style='text-align: center;'>Hochhaus&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&#8601;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&#8600;</td>
+                </tr>
+                <tr>
+                    <td>This</td><td>is</td><td>a</td><td>high&nbsp;&nbsp;&nbsp;</td><td>rise</td><td>building</td>
+                </tr>
+            </table>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+            <h3>Phrase-based Translation</h3>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+            <h3>Alignment Function</h3>
+            <ul>
+                <li>Word-Based Models translate words as atomic units</li>
+                <li>Phrase-Based Models translate phrases as atomic units</li>
+                <li>Advantages:</li>
+                <ul>
+                    <li>many-to-many translation can handle non-compositional phrases</li>
+                    <li>use of local context in translation</li>
+                    <li>the more data, the longer phrases can be learned</li>
+                </ul>
+                <li>&ldquo;Standard Model&rdquo;, used by Google Translate and others</li>
+            </ul>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+            <h3>Phrase-Based Model</h3>
+            <table style='font-size: 80%;'>
+                <tr>
+                    <td>Berlin</td><td>ist</td><td>ein</td><td>herausragendes</td><td>Kunst- und Kulturzentrum</td><td>.</td>
+                </tr>
+                <tr>
+                    <td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td>
+                </tr>
+                <tr>
+                    <td>Berlin</td><td>is</td><td>an</td><td>outstanding</td><td>Art and cultural center</td><td>.</td>
+                </tr>
+            </table>
+            <br/>
+            <ul>
+                <li>Foreign input is segmented in phrases</li>
+                <li>Each phrase is translated into English</li>
+                <li>Phrases are reordered</li>
+            </ul>
+        </section>
+        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+            <h3>Decoding</h3>
+        </section>
+        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+            <ul>
+                <li>We have a mathematical model for translation <code>p(e|f)</code></li>
+                <li>Task of decoding: find the translation <code>e<sub style="font-size:50%">best</small></sub></code> with highest probability<br/>
+                    <pre><code data-trim data-noescape>e<sub style="font-size:50%">best</sub> = <i>argmax</i> p(e|f)</code></pre>
+                </li>
+                <li>Two types of error</li>
+                <ul>
+                    <li>the most probable translation is bad &rarr; fix the model</li>
+                    <li>search does not find the most probable translation &rarr; fix the search</li>
+                </ul>
+            </ul>
+        </section>
         <section data-background-image="img/ZsMwlm2-redish.jpg">
           <h3>Why move from SMT to NMT?</h3>
           <ul>
